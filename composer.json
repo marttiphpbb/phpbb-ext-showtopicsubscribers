@@ -1,0 +1,25 @@
+{
+	"name": "marttiphpbb/showsubscribers",
+	"type": "phpbb-extension",
+	"description": "Show subscribers of forums and topics",
+	"homepage": "https://github.com/marttiphpbb/phpbb-ext-showsubscribers",
+	"version": "0.1.0",
+	"time": "2015-01-01",
+	"license": "GPL-2.0",
+	"authors": [{
+			"name": "martti",
+			"email": "info@martti.be",
+			"homepage": "https://github.com/marttiphpbb/",
+			"role": "Developer"
+		}],
+	"require": {
+		"php": ">=5.3.3"
+
+	},
+	"extra": {
+		"display-name": "Show Subscribers",
+		"soft-require": {
+			"phpbb/phpbb": ">=3.1.0-RC2,<3.2.*@dev"
+		}
+	}
+}
