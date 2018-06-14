@@ -1,14 +1,14 @@
 <?php
 /**
-* phpBB Extension - marttiphpbb showsubscribers
+* phpBB Extension - marttiphpbb showtopicsubscribers
 * @copyright (c) 2015 - 2018 marttiphpbb <info@martti.be>
 * @license GNU General Public License, version 2 (GPL-2.0)
 */
 
-namespace marttiphpbb\showsubscribers\migrations;
+namespace marttiphpbb\showtopicsubscribers\migrations;
 
 use phpbb\db\migration\migration;
-use marttiphpbb\showsubscribers\util\cnst;
+use marttiphpbb\showtopicsubscribers\util\cnst;
 
 class v_1_0_0 extends migration
 {
@@ -16,7 +16,7 @@ class v_1_0_0 extends migration
 	public function update_data()
 	{
 		return [
-			['config.add', ['showsubscribers_treshold', 100]],
+			['config.add', ['showtopicsubscribers_treshold', 100]],
 
 			['module.add', [
 				'acp',
@@ -28,14 +28,14 @@ class v_1_0_0 extends migration
 				'acp',
 				cnst::L_ACP,
 				[
-					'module_basename'	=> '\marttiphpbb\showsubscribers\acp\main_module',
+					'module_basename'	=> '\marttiphpbb\showtopicsubscribers\acp\main_module',
 					'modes'				=> [
 						'settings',
 					],
 				],
 			]],
 
-			['permission.add', ['u_showsubscribers_view']],
+			['permission.add', ['u_showtopicsubscribers_view']],
 
 		];
 	}

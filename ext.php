@@ -1,11 +1,11 @@
 <?php
 /**
-* phpBB Extension - marttiphpbb showsubscribers
+* phpBB Extension - marttiphpbb showtopicsubscribers
 * @copyright (c) 2015 - 2018 marttiphpbb <info@martti.be>
 * @license GNU General Public License, version 2 (GPL-2.0)
 */
 
-namespace marttiphpbb\showsubscribers;
+namespace marttiphpbb\showtopicsubscribers;
 
 class ext extends \phpbb\extension\base
 {

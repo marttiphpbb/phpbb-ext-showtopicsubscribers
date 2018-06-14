@@ -28,7 +28,7 @@ matrix:
 
 env:
   global:
-    - EXTNAME="marttiphpbb/showsubscribers"
+    - EXTNAME="marttiphpbb/showtopicsubscribers"
     - SNIFF="1"
     - IMAGE_ICC="1"
     - PHPBB_BRANCH="develop-ascraeus"

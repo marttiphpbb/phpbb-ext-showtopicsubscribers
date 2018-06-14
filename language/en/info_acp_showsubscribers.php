@@ -1,7 +1,7 @@
 <?php
 
 /**
-* phpBB Extension - marttiphpbb showsubscribers
+* phpBB Extension - marttiphpbb showtopicsubscribers
 * @copyright (c) 2015 - 2018 marttiphpbb <info@martti.be>
 * @license GNU General Public License, version 2 (GPL-2.0)
 */
@@ -18,9 +18,9 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, [
 
-	'ACP_MARTTIPHPBB_SHOWSUBSCRIBERS'			=> 'Show subscribers',
-	'ACP_MARTTIPHPBB_SHOWSUBSCRIBERS_SETTINGS'	=> 'Settings',
+	'ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS'			=> 'Show subscribers',
+	'ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_SETTINGS'	=> 'Settings',
 
-	'ACL_U_MARTTIPHPBB_SHOWSUBSCRIBERS_VIEW'	=> 'Can view who is subscribed to forums and topics',
+	'ACL_U_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_VIEW'	=> 'Can view who is subscribed to forums and topics',
 
 ]);

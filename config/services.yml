@@ -1,6 +1,6 @@
 services:
-    marttiphpbb.showsubscribers.listener:
-        class: marttiphpbb\showsubscribers\event\listener
+    marttiphpbb.showtopicsubscribers.listener:
+        class: marttiphpbb\showtopicsubscribers\event\listener
         arguments:
             - @auth
             - @config

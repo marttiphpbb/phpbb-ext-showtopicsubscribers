@@ -1,11 +1,11 @@
 <?php
 /**
-* phpBB Extension - marttiphpbb showsubscribers
+* phpBB Extension - marttiphpbb showtopicsubscribers
 * @copyright (c) 2015 - 2018 marttiphpbb <info@martti.be>
 * @license GNU General Public License, version 2 (GPL-2.0)
 */
 
-namespace marttiphpbb\showsubscribers\event;
+namespace marttiphpbb\showtopicsubscribers\event;
 
 use phpbb\auth\auth;
 use phpbb\config\db as config;
@@ -82,7 +82,7 @@ class listener implements EventSubscriberInterface
 		$lang_set_ext = $event['lang_set_ext'];
 
 		$lang_set_ext[] = [
-			'ext_name' => 'marttiphpbb/showsubscribers',
+			'ext_name' => 'marttiphpbb/showtopicsubscribers',
 			'lang_set' => 'common',
 		];
 		$event['lang_set_ext'] = $lang_set_ext;
