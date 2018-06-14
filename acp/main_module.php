@@ -1,7 +1,7 @@
 <?php
 /**
 * phpBB Extension - marttiphpbb showsubscribers
-* @copyright (c) 2015 marttiphpbb <info@martti.be>
+* @copyright (c) 2015 - 2018 marttiphpbb <info@martti.be>
 * @license GNU General Public License, version 2 (GPL-2.0)
 */
 
@@ -13,16 +13,22 @@ class main_module
 
 	function main($id, $mode)
 	{
-		global $config, $user, $request, $template;
+		global $phpbb_container;
 
-		$user->add_lang_ext('marttiphpbb/showsubscribers', 'acp');
+		$user = $phpbb_container->get('user');
+		$config = $phpbb_containter->get('config');
+		$template = $phpbb_container->get('template');
+		$request = $phpbb_container->get('request');
+		$language = $phpbb_container->get('language');
+
+		$language->add_lang_ext('acp', 'marttiphpbb/showsubscribers');
 		add_form_key('marttiphpbb/showsubscribers');
 
 		switch ($mode)
 		{
 			case 'settings':
 				$this->tpl_name = 'settings';
-				$this->page_title = $user->lang('ACP_SHOWSUBSCRIBERS_SETTINGS');
+				$this->page_title = $user->lang('ACP_MARTTIPHPBB_SHOWSUBSCRIBERS_SETTINGS');
 
 				if ($request->is_set_post('submit'))
 				{
@@ -37,11 +43,11 @@ class main_module
 					trigger_error($user->lang('ACP_SHOWSUBCRIBERS_SETTINGS_SAVED') . adm_back_link($this->u_action));
 				}
 
-				$template->assign_vars(array(
+				$template->assign_vars([
 					'U_ACTION'							=> $this->u_action,
-					'SHOWSUBSCRIBERS_TRESHOLD'			=> $config['showsubscribers_ajax_treshold'],
-					'S_SHOWSUBSCRIBERS_COUNT_ONLY'		=> $config['showsubscribers_count_only'],
-				));
+					'MARTTIPHPBB_SHOWSUBSCRIBERS_TRESHOLD'			=> $config['showsubscribers_treshold'],
+					'S_MARTTIPHPBB_SHOWSUBSCRIBERS_COUNT_ONLY'		=> $config['showsubscribers_count_only'],					'S_MARTTIPHPBB_SHOWSUBSCRIBERS_COUNT_ONLY'		=> $config['showsubscribers_count_only'],
+				]);
 
 				break;
 		}

@@ -1,51 +1,42 @@
 <?php
 /**
 * phpBB Extension - marttiphpbb showsubscribers
-* @copyright (c) 2015 marttiphpbb <info@martti.be>
+* @copyright (c) 2015 - 2018 marttiphpbb <info@martti.be>
 * @license GNU General Public License, version 2 (GPL-2.0)
 */
 
 namespace marttiphpbb\showsubscribers\migrations;
 
 use phpbb\db\migration\migration;
+use marttiphpbb\showsubscribers\util\cnst;
 
 class v_1_0_0 extends migration
 {
 
 	public function update_data()
 	{
-		return array(
-			array('config.add', array('showsubscribers_treshold', 25)),
+		return [
+			['config.add', ['showsubscribers_treshold', 100]],
 
-			array('module.add', array(
+			['module.add', [
 				'acp',
 				'ACP_CAT_DOT_MODS',
-				'ACP_SHOWSUBSCRIBERS'
-			)),
+				cnst::L_ACP,
+			]],
 
-			array('module.add', array(
+			['module.add', [
 				'acp',
-				'ACP_SHOWSUBSCRIBERS',
-				array(
+				cnst::L_ACP,
+				[
 					'module_basename'	=> '\marttiphpbb\showsubscribers\acp\main_module',
-					'modes'				=> array(
+					'modes'				=> [
 						'settings',
-					),
-				),
-			)),
+					],
+				],
+			]],
 
-			array('permission.add', array('u_showsubscribers_view')),
+			['permission.add', ['u_showsubscribers_view']],
 
-		);
-	}
-
-	public function update_schema()
-	{
-		return array();
-	}
-
-	public function revert_schema()
-	{
-		return array();
+		];
 	}
 }

@@ -1,7 +1,7 @@
 <?php
 /**
 * phpBB Extension - marttiphpbb showsubscribers
-* @copyright (c) 2015 marttiphpbb <info@martti.be>
+* @copyright (c) 2015 - 2018 marttiphpbb <info@martti.be>
 * @license GNU General Public License, version 2 (GPL-2.0)
 */
 
@@ -69,31 +69,29 @@ class listener implements EventSubscriberInterface
 
 	static public function getSubscribedEvents()
 	{
-		return array(
+		return [
 			'core.user_setup'						=> 'core_user_setup',
 			'core.page_footer'						=> 'core_page_footer',
 			'core.viewonline_overwrite_location'	=> 'core_viewonline_overwrite_location',
 			'core.memberlist_view_profile'			=> 'core_memberlist_view_profile',
-		);
+		];
 	}
 
 	public function core_user_setup($event)
 	{
 		$lang_set_ext = $event['lang_set_ext'];
 
-		$lang_set_ext[] = array(
+		$lang_set_ext[] = [
 			'ext_name' => 'marttiphpbb/showsubscribers',
 			'lang_set' => 'common',
-		);
+		];
 		$event['lang_set_ext'] = $lang_set_ext;
 
 	}
 
 	public function core_page_footer($event)
 	{
-		$this->template->assign_vars(array(
-
-		));
+		$this->template->assign_vars([]);
 	}
 
 	public function core_viewonline_overwrite_location($event)
@@ -120,12 +118,5 @@ class listener implements EventSubscriberInterface
 
 		$amount = $this->currency_transformer->transform($member['user_cc_balance']);
 
-		$this->template->assign_vars(array(
-			'CC_USER_TRANSACTION_COUNT'	=> $member['user_cc_transaction_count'],
-			'CC_USER_TRANSACTIONS_PCT'	=> $this->user->lang('CC_USER_TRANSACTION_PCT', $percentage),
-			'CC_USER_TRANSACTIONS_PER_DAY' => $this->user->lang('CC_USER_TRANSACTION_PER_DAY', $transactions_per_day),
-			'U_CC_USER_TRANSACTIONS' => $this->helper->route('marttiphpbb_cc_transactionlist_controller', array('user_id' => $member['user_id'])),
-			'CC_USER_AMOUNT_CURRENCY'	=> $this->user->lang('CC_AMOUNT_CURRENCY', $amount['local']),
-		));
 	}
 }
