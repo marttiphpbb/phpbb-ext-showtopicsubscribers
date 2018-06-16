@@ -17,7 +17,7 @@ class main_module
 	{
 		global $phpbb_container;
 
-		$config = $phpbb_containter->get('config');
+		$config = $phpbb_container->get('config');
 		$template = $phpbb_container->get('template');
 		$request = $phpbb_container->get('request');
 		$language = $phpbb_container->get('language');
@@ -38,7 +38,7 @@ class main_module
 						trigger_error('FORM_INVALID');
 					}
 
-					$config->set(cnst::ID . '_treshold', $request->variable(cnst::ID . '_treshold', 100));
+					$config->set(cnst::ID . '_treshold', $request->variable('treshold', 100));
 
 					trigger_error($language->lang(cnst::L_ACP . '_SETTINGS_SAVED') . adm_back_link($this->u_action));
 				}

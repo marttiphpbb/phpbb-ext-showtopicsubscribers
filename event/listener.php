@@ -8,9 +8,7 @@
 namespace marttiphpbb\showtopicsubscribers\event;
 
 use phpbb\event\data as event;
-use phpbb\auth\auth;
 use phpbb\config\db as config;
-use phpbb\controller\helper;
 use phpbb\template\twig\twig as template;
 use phpbb\language\language;
 use marttiphpbb\showtopicsubscribers\service\topic_subscribers;
@@ -19,28 +17,19 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class listener implements EventSubscriberInterface
 {
-	protected $auth;
 	protected $config;
-	protected $helper;
-	protected $php_ext;
 	protected $template;
 	protected $language;
 	protected $topic_subscribers;
 
 	public function __construct(
-			auth $auth,
 			config $config,
-			helper $helper,
-			string $php_ext,
 			template $template,
 			language $language,
 			topic_subscribers $topic_subscribers
 	)
 	{
-		$this->auth = $auth;
 		$this->config = $config;
-		$this->helper = $helper;
-		$this->php_ext = $php_ext;
 		$this->template = $template;
 		$this->language = $language;
 		$this->topic_subscribers = $topic_subscribers;
@@ -56,11 +45,26 @@ class listener implements EventSubscriberInterface
 
 	public function core_viewtopic_assign_template_vars_before(event $event)
 	{
-		if (!$this->auth->acl_get('u_cc_viewtransactions'))
+		$this->language->add_lang('common', cnst::FOLDER);
+		$topic_id = $event['topic_id'];
+
+		$count = $this->topic_subscribers->get_count($topic_id);
+		error_log($count);
+		$treshold = $this->config[cnst::ID . '_treshold'];
+
+		if (!$count || $count > $treshold)
 		{
-			return;
+			$list = $this->language->lang(cnst::L . '_NO_LIST', $count);
+		}
+		else
+		{
+			$list = $this->topic_subscribers->get_string($topic_id);
+			error_log($list);
+			$list = $this->language->lang(cnst::L . '_LIST', $count, $list);
 		}
 
-		$this->language->add_lang('common', cnst::L);
+		$this->template->assign_vars([
+			'MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_LIST' => $list,
+		]);
 	}
 }

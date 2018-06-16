@@ -12,19 +12,15 @@
 				<label for="treshold">
 					{{- lang('ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_TRESHOLD') -}}
 				</label>
-			<br><span>{{- lang('ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_TRESHOLD_EXPLAIN') -}}</span></dt>
+				<br>
+				<span>
+					{{- lang('ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_TRESHOLD_EXPLAIN') -}}
+				</span>
+			</dt>
 			<dd>
-				<input type="text" name="treshold" id="treshold" value="{{- TRESHOLD -}}" size="4" maxlength="4">
+				<input type="number" name="treshold" id="treshold" value="{{- TRESHOLD -}}">
 			</dd>
 		</dl>
-
-		<dl>
-			<dt><label for="showtopicsubscribers_count_only">{L_ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_COUNT_ONLY}</label>
-			<br><span>{L_ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_COUNT_ONLY_EXPLAIN}</span></dt>
-			<dd><input type="radio" class="radio" name="showtopicsubscribers_count_only" value="1" <!-- IF S_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_COUNT_ONLY -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp;
-			<input type="radio" class="radio" name="showtopicsubscribers_count_only" value="0" <!-- IF not S_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_COUNT_ONLY -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
-		</dl>
-
 	</fieldset>
 
 	<fieldset class="submit-buttons">
@@ -34,4 +30,4 @@
 {{- S_FORM_TOKEN -}}
 </form>
 
-{%- 'overall_footer.html' -%}
+{%- include 'overall_footer.html' -%}
