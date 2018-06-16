@@ -2,11 +2,24 @@ services:
     marttiphpbb.showtopicsubscribers.listener:
         class: marttiphpbb\showtopicsubscribers\event\listener
         arguments:
-            - @auth
-            - @config
-            - @controller.helper
-            - %core.php_ext%
-            - @template
-            - @user
+            - '@auth'
+            - '@config'
+            - '@controller.helper'
+            - '%core.php_ext%'
+            - '@template'
+            - '@language'
+            - '@marttiphpbb.showtopicsubscribers.topic_subscribers'
         tags:
             - { name: event.listener }
+
+    marttiphpbb.showtopicsubscribers.topic_subscribers:
+        class: marttiphpbb\showtopicsubscribers\service\topic_subscribers
+        arguments:
+            - '@auth'
+            - '@config'
+            - '@controller.helper'
+            - '%core.php_ext%'
+            - '@template'
+            - '@user'
+            - '@language'
+            - '%tables.topics_watch'

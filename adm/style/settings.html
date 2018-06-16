@@ -1,11 +1,12 @@
 <!-- INCLUDE overall_header.html -->
 
-<h1>{L_ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_SETTINGS} </h1>
+<h1>
+	{{- lang('ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_SETTINGS') -}}
+</h1>
 
 <form id="acp_board" method="post" action="{U_ACTION}">
 
 	<fieldset>
-
 		<dl>
 			<dt><label for="showtopicsubscribers_ajax_treshold">{L_ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_AJAX_TRESHOLD}</label>
 			<br/><span>{L_ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_AJAX_TRESHOLD_EXPLAIN}</span></dt>
@@ -14,7 +15,7 @@
 
 		<dl>
 			<dt><label for="showtopicsubscribers_count_only">{L_ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_COUNT_ONLY}</label>
-			<br/><span>{L_ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_COUNT_ONLY_EXPLAIN}</span></dt>
+			<br><span>{L_ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_COUNT_ONLY_EXPLAIN}</span></dt>
 			<dd><input type="radio" class="radio" name="showtopicsubscribers_count_only" value="1" <!-- IF S_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_COUNT_ONLY -->checked="checked"<!-- ENDIF -->/> {L_YES} &nbsp;
 			<input type="radio" class="radio" name="showtopicsubscribers_count_only" value="0" <!-- IF not S_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_COUNT_ONLY -->checked="checked"<!-- ENDIF --> /> {L_NO}</dd>
 		</dl>
@@ -22,12 +23,10 @@
 	</fieldset>
 
 	<fieldset class="submit-buttons">
-
-		<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />
-		{S_FORM_TOKEN}
-
+		<input class="button1" type="submit" id="submit" name="submit" value="{{- lang('SUBMIT') -}}">
 	</fieldset>
 
+{{- S_FORM_TOKEN -}}
 </form>
 
 <!-- INCLUDE overall_footer.html -->

@@ -6,7 +6,7 @@
 */
 
 namespace marttiphpbb\showtopicsubscribers\acp;
-use marttiphpbb\showtopicsubscribers\cnst;
+use marttiphpbb\showtopicsubscribers\util\cnst;
 
 class main_info
 {
