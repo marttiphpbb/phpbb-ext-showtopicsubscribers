@@ -1,12 +1,9 @@
 # phpBB Extension - marttiphpbb Show Topic Subscribers
 
-## Early development stage! (do not install)
-
 ## Features
 
-* Shows the number of subscribers
-* Provides a forum permission to see the subscribers' user names, shown at the bottom of the page.
-* A threshold can be defined in ACP of the maximum number of subscribers to be shown. Above this number the subscribers are not shown. (To be set if there is a  performance issue).
+* Shows the subscribers of a topic
+* A threshold can be defined in ACP of the maximum number of subscribers to be shown. Above this number only the number is shown. (To be set if there is a  performance issue).
 
 ## Requirements
 
@@ -15,7 +12,7 @@
 
 ## Quick Install
 
-You can install this on the latest release of phpBB 3.1 by following the steps below:
+You can install this on the latest release of phpBB 3.2 by following the steps below:
 
 * Create `marttiphpbb/showtopicsubscribers` in the `ext` directory.
 * Download and unpack the repository into `ext/marttiphpbb/showtopicsubscribers`
@@ -33,3 +30,9 @@ You can install this on the latest release of phpBB 3.1 by following the steps b
 ## License
 
 [GPL-2.0](license.txt)
+
+## Screenshots
+
+![ACP](doc/acp.png)
+
+![List](doc/list.png)
