@@ -21,6 +21,6 @@ $lang = array_merge($lang, [
 	'ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_SETTINGS_SAVED'	=> 'The settings have been saved successfully!',
 	'ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_TRESHOLD'			=> 'Treshold number',
 	'ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_TRESHOLD_EXPLAIN'	=>
-		'Above this number of topic subscribers the names of the users are not shown anymore.',
-
+		'Above this number of topic subscribers, only the
+		number is shown and not the usernames.',
 ]);

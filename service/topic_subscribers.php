@@ -29,14 +29,14 @@ class topic_subscribers
 	protected $topics_watch_table;
 
 	public function __construct(
-			auth $auth,
-			config $config,
-			helper $helper,
-			string $php_ext,
-			template $template,
-			user $user,
-			language $language,
-			string $topics_watch_table
+		auth $auth,
+		config $config,
+		helper $helper,
+		string $php_ext,
+		template $template,
+		user $user,
+		language $language,
+		string $topics_watch_table
 	)
 	{
 		$this->auth = $auth;

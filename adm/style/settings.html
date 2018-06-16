@@ -1,4 +1,4 @@
-<!-- INCLUDE overall_header.html -->
+{%- include 'overall_header.html' -%}
 
 <h1>
 	{{- lang('ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_SETTINGS') -}}
@@ -8,9 +8,14 @@
 
 	<fieldset>
 		<dl>
-			<dt><label for="showtopicsubscribers_ajax_treshold">{L_ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_AJAX_TRESHOLD}</label>
-			<br/><span>{L_ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_AJAX_TRESHOLD_EXPLAIN}</span></dt>
-			<dd><input type="text" name="showtopicsubscribers_ajax_treshold" value="{MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_AJAX_TRESHOLD}" size="4" maxlength="4" /></dd>
+			<dt>
+				<label for="treshold">
+					{{- lang('ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_TRESHOLD') -}}
+				</label>
+			<br><span>{{- lang('ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_TRESHOLD_EXPLAIN') -}}</span></dt>
+			<dd>
+				<input type="text" name="treshold" id="treshold" value="{{- TRESHOLD -}}" size="4" maxlength="4">
+			</dd>
 		</dl>
 
 		<dl>
@@ -29,4 +34,4 @@
 {{- S_FORM_TOKEN -}}
 </form>
 
-<!-- INCLUDE overall_footer.html -->
+{%- 'overall_footer.html' -%}

@@ -7,6 +7,8 @@
 
 namespace marttiphpbb\showtopicsubscribers\acp;
 
+use marttiphpbb\showtopicsubscribers\util\cnst;
+
 class main_module
 {
 	var $u_action;
@@ -15,38 +17,35 @@ class main_module
 	{
 		global $phpbb_container;
 
-		$user = $phpbb_container->get('user');
 		$config = $phpbb_containter->get('config');
 		$template = $phpbb_container->get('template');
 		$request = $phpbb_container->get('request');
 		$language = $phpbb_container->get('language');
 
-		$language->add_lang_ext('acp', 'marttiphpbb/showtopicsubscribers');
-		add_form_key('marttiphpbb/showtopicsubscribers');
+		$language->add_lang('acp', cnst::FOLDER);
+		add_form_key(cnst::FOLDER);
 
 		switch ($mode)
 		{
 			case 'settings':
 				$this->tpl_name = 'settings';
-				$this->page_title = $user->lang('ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_SETTINGS');
+				$this->page_title = $language->lang(cnst::L_ACP . '_SETTINGS');
 
 				if ($request->is_set_post('submit'))
 				{
-					if (!check_form_key('marttiphpbb/showtopicsubscribers'))
+					if (!check_form_key(cnst::FOLDER))
 					{
 						trigger_error('FORM_INVALID');
 					}
 
-					$config->set('showtopicsubscribers_ajax_treshold', $request->variable('showtopicsubscribers_ajax_treshold', 25));
-					$config->set('showtopicsubscribers_count_only', $request->variable('showtopicsubscribers_count_only', 0));
+					$config->set(cnst::ID . '_treshold', $request->variable(cnst::ID . '_treshold', 100));
 
-					trigger_error($user->lang('ACP_SHOWSUBCRIBERS_SETTINGS_SAVED') . adm_back_link($this->u_action));
+					trigger_error($language->lang(cnst::L_ACP . '_SETTINGS_SAVED') . adm_back_link($this->u_action));
 				}
 
 				$template->assign_vars([
-					'U_ACTION'							=> $this->u_action,
-					'MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_TRESHOLD'			=> $config['showtopicsubscribers_treshold'],
-					'S_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_COUNT_ONLY'		=> $config['showtopicsubscribers_count_only'],					'S_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_COUNT_ONLY'		=> $config['showtopicsubscribers_count_only'],
+					'U_ACTION'	=> $this->u_action,
+					'TRESHOLD'	=> $config[cnst::ID . '_treshold'],
 				]);
 
 				break;

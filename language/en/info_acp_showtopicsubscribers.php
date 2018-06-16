@@ -18,9 +18,7 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, [
 
-	'ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS'			=> 'Show subscribers',
+	'ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS'			=> 'Show Topic Subscribers',
 	'ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_SETTINGS'	=> 'Settings',
-
-	'ACL_U_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_VIEW'	=> 'Can view who is subscribed to forums and topics',
 
 ]);
