@@ -1,5 +1,7 @@
 # phpBB Extension - marttiphpbb Show Topic Subscribers
 
+[Topic on phpBB.com](https://www.phpbb.com/community/viewtopic.php?f=456&t=2476106)
+
 ## Features
 
 * Shows the subscribers of a topic
