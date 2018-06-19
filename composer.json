@@ -3,7 +3,7 @@
 	"type": "phpbb-extension",
 	"description": "Show subscribers of topics",
 	"homepage": "https://github.com/marttiphpbb/phpbb-ext-showtopicsubscribers",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"time": "2018-06-13",
 	"license": "GPL-2.0",
 	"authors": [{
@@ -19,6 +19,11 @@
 		"display-name": "Show Topic Subscribers",
 		"soft-require": {
 			"phpbb/phpbb": ">=3.2"
+		},
+		"version-check": {
+			"host": "marttiphpbb.github.io",
+			"directory": "/version",
+			"filename": "showtopicsubscribers.json"
 		}
 	}
 }
