@@ -38,14 +38,14 @@ class main_module
 						trigger_error('FORM_INVALID');
 					}
 
-					$config->set(cnst::ID . '_treshold', $request->variable('treshold', 100));
+					$config->set(cnst::ID . '_threshold', $request->variable('threshold', 0));
 
 					trigger_error($language->lang(cnst::L_ACP . '_SETTINGS_SAVED') . adm_back_link($this->u_action));
 				}
 
 				$template->assign_vars([
 					'U_ACTION'	=> $this->u_action,
-					'TRESHOLD'	=> $config[cnst::ID . '_treshold'],
+					'THRESHOLD'	=> $config[cnst::ID . '_threshold'],
 				]);
 
 				break;

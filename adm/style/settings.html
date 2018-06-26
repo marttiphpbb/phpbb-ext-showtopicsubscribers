@@ -3,22 +3,25 @@
 <h1>
 	{{- lang('ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_SETTINGS') -}}
 </h1>
+<p>
+	{{- lang('ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_SETTINGS_EXPLAIN') -}}
+</p>
 
 <form id="acp_board" method="post" action="{U_ACTION}">
 
 	<fieldset>
 		<dl>
 			<dt>
-				<label for="treshold">
-					{{- lang('ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_TRESHOLD') -}}
+				<label for="threshold">
+					{{- lang('ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_THRESHOLD') -}}
 				</label>
 				<br>
 				<span>
-					{{- lang('ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_TRESHOLD_EXPLAIN') -}}
+					{{- lang('ACP_MARTTIPHPBB_SHOWTOPICSUBSCRIBERS_THRESHOLD_EXPLAIN') -}}
 				</span>
 			</dt>
 			<dd>
-				<input type="number" name="treshold" id="treshold" value="{{- TRESHOLD -}}">
+				<input type="number" name="threshold" id="threshold" value="{{- THRESHOLD -}}">
 			</dd>
 		</dl>
 	</fieldset>
