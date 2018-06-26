@@ -8,12 +8,6 @@
 namespace marttiphpbb\showtopicsubscribers\service;
 
 use phpbb\db\driver\factory as db;
-use phpbb\auth\auth;
-use phpbb\config\db as config;
-use phpbb\controller\helper;
-use phpbb\template\twig\twig as template;
-use phpbb\user;
-use phpbb\language\language;
 use marttiphpbb\showtopicsubscribers\util\cnst;
 
 class topic_subscribers
